@@ -9,8 +9,16 @@
   margin: 0;
 }
 
+:root {
+  --white--color: #fff;
+  --gold--color: gold;
+}
+
 body {
   font-family: "Roboto Serif", serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/Cool\ Wallpapers\ Gif.gif) 100vh;
+  color: var(--white--color);
 }
 
 header {
@@ -22,8 +30,45 @@ header h1 {
   font-size: 3rem;
 }
 
+/* Search */
 .pokemonSearch-container h4 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
+}
+
+.input-group > .form-control {
+  height: 3.5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.7);
+}
+
+.input-group .btn {
+  color: var(--white--color);
+}
+
+/* navbar */
+
+.navbar {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(./images/pokemon-background.jpg);
+  background-size: 13rem;
+}
+
+.navbar a {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--gold--color);
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--gold--color);
 }
