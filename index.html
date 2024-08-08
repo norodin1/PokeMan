@@ -19,7 +19,7 @@
     <title>PokeMan!</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-dark">
       <div class="container-fluid">
         <a class="navbar-brand ps-5" href="#">
           <img
@@ -43,14 +43,28 @@
           class="collapse navbar-collapse justify-content-end pe-5"
           id="navbarNav"
         >
-          <ul class="navbar-nav">
+          <ul class="navbar-nav nav-underline">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./index.html"
                 >Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Poke who?</a>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-expanded="false"
+                >Mini Game</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./pokewho.html" target="_blank"
+                    >Who's that Pokemon!</a
+                  >
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://pokeapi.co/" target="_blank"
@@ -78,18 +92,34 @@
             aria-label="Recipient's username"
             aria-describedby="button-addon2"
           />
-          <button
-            class="searchBtn btn btn-outline-secondary"
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic outlined example"
+          >
+            <button
+              id="searchBtn"
+              type="button"
+              class="btn btn-outline-warning"
+            >
+              Search
+            </button>
+            <button id="clear" type="button" class="btn btn-outline-warning">
+              Clear
+            </button>
+          </div>
+          <!-- <button
+            class="searchBtn btn btn-outline-warning"
             type="button"
-            id="searchBtn button-addon2"
+            id="searchBtn"
           >
             Search
-          </button>
+          </button> -->
         </div>
       </div>
-      <div class="container">
-        <div class="row justify-content-center p-3">
-          <div class="card me-3 mt-5" style="width: 20rem">
+      <div id="container" class="who-container container">
+        <div id="searchList" class="searchList row justify-content-center p-3">
+          <!-- <div class="card me-3 mt-5" style="width: 20rem">
             <img
               id="pokemonImage"
               class="pokemonImage card-img-top pt-2"
@@ -101,77 +131,85 @@
               <h5 class="pokemonName card-title">Pikachu</h5>
               <p class="card-text"><span>Element type: </span>Electric</p>
               <p class="card-text"><span>Ability: </span>Shock</p>
+              <p class="card-text"><span>Height: </span>4ft</p>
+              <p class="card-text"><span>Weight: </span>60kg</p>
+            </div>
+          </div> -->
+        </div>
+        <div id="search-not-found" class="search-not-found">
+          Search not found
+        </div>
+        <!-- <div id="who-container" class="who-container container">
+          <div id="who" class="who d-flex justify-content-center">
+            <div>
+              <a href="./pokewho.html" target="_blank">
+                <div class="card me-3 mt-5" style="width: 20rem">
+                  <img
+                    id="pokemonImage"
+                    class="pokemonImage card-img-top pt-2"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
+                    alt="Pokemon image"
+                    style="width: 18rem"
+                  />
+                  <div class="card-body">
+                    <h5 class="pokemonName card-title">Who's That Pokemon?</h5>
+                    <p class="card-text"><span>Element type: </span>?</p>
+                    <p class="card-text"><span>Ability: </span>?</p>
+                    <p class="card-text"><span>Height: </span>?</p>
+                    <p class="card-text"><span>Weight: </span>?</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
-          <div class="card me-3 mt-5" style="width: 20rem">
-            <img
-              id="pokemonImage"
-              class="pokemonImage card-img-top pt-2"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-              alt="Pokemon image"
-              style="width: 18rem"
-            />
-            <div class="card-body">
-              <h5 class="pokemonName card-title">Pikachu</h5>
-              <p class="card-text"><span>Element type: </span>Electric</p>
-              <p class="card-text"><span>Ability: </span>Shock</p>
+        </div> -->
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Let's Play!
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h5>Guess whos's that Pokemon!</h5>
+            <div class="d-flex justify-content-center">
+              <img
+                src="./assets/images/whosdatpokemon.gif"
+                alt="Who's that pokemon"
+              />
             </div>
           </div>
-          <div class="card me-3 mt-5" style="width: 20rem">
-            <img
-              id="pokemonImage"
-              class="pokemonImage card-img-top pt-2"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-              alt="Pokemon image"
-              style="width: 18rem"
-            />
-            <div class="card-body">
-              <h5 class="pokemonName card-title">Pikachu</h5>
-              <p class="card-text"><span>Element type: </span>Electric</p>
-              <p class="card-text"><span>Ability: </span>Shock</p>
-            </div>
-          </div>
-          <div class="card me-3 mt-5" style="width: 20rem">
-            <img
-              id="pokemonImage"
-              class="pokemonImage card-img-top pt-2"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-              alt="Pokemon image"
-              style="width: 18rem"
-            />
-            <div class="card-body">
-              <h5 class="pokemonName card-title">Pikachu</h5>
-              <p class="card-text"><span>Element type: </span>Electric</p>
-              <p class="card-text"><span>Ability: </span>Shock</p>
-            </div>
-          </div>
-          <div class="card me-3 mt-5" style="width: 20rem">
-            <img
-              id="pokemonImage"
-              class="pokemonImage card-img-top pt-2"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-              alt="Pokemon image"
-              style="width: 18rem"
-            />
-            <div class="card-body">
-              <h5 class="pokemonName card-title">Pikachu</h5>
-              <p class="card-text"><span>Element type: </span>Electric</p>
-              <p class="card-text"><span>Ability: </span>Shock</p>
-            </div>
-          </div>
-          <div class="card me-3 mt-5" style="width: 20rem">
-            <img
-              id="pokemonImage"
-              class="pokemonImage card-img-top pt-2"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-              alt="Pokemon image"
-              style="width: 18rem"
-            />
-            <div class="card-body">
-              <h5 class="pokemonName card-title">Pikachu</h5>
-              <p class="card-text"><span>Element type: </span>Electric</p>
-              <p class="card-text"><span>Ability: </span>Shock</p>
-            </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <a href="./pokewho.html" target="_blank"
+              ><button type="button" class="btn btn-primary">
+                Let's Play!
+              </button></a
+            >
           </div>
         </div>
       </div>

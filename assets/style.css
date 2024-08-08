@@ -28,6 +28,37 @@ header {
 
 header h1 {
   font-size: 3rem;
+  color: var(--gold--color);
+}
+
+/* navbar */
+
+.navbar a {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--gold--color);
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--gold--color);
+}
+
+.dropdown-menu {
+  background: transparent;
+}
+
+.dropdown-item:hover {
+  color: var(--gold--color);
+  background: transparent;
+}
+
+.pokemonImage {
+  height: 18rem;
+  /* width: 18rem; */
 }
 
 /* Search */
@@ -51,24 +82,28 @@ header h1 {
   color: var(--white--color);
 }
 
-/* navbar */
-
-.navbar {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(./images/pokemon-background.jpg);
-  background-size: 13rem;
+.search-not-found {
+  display: none;
 }
 
-.navbar a {
-  color: #fff;
-  font-size: 1rem;
+#who img {
+  filter: brightness(0%);
 }
 
-.navbar-nav .nav-link.active {
-  color: var(--gold--color);
+#who a {
+  text-decoration: none;
 }
 
-.nav-link:focus,
-.nav-link:hover {
-  color: var(--gold--color);
+.card {
+  height: 32rem;
+}
+
+/* Modal */
+
+.modal-content {
+  color: black;
+}
+
+#staticBackdrop img {
+  width: 20rem;
 }
