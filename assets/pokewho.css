@@ -13,9 +13,17 @@
   --button-correct: #5aae76;
   --button-wrong: #e13e3e;
   --button-hover: #aaa;
+  --gold--color: gold;
 }
 
 body {
+  font-family: "Roboto Serif", serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/Cool\ Wallpapers\ Gif.gif) 100vh;
+  color: var(--white-color);
+}
+
+/* body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,25 +33,65 @@ body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(162.44deg, #3b4cca 0%, #ff3535 100%);
   color: var(--white-color);
+} */
+
+/* navbar */
+
+.navbar a {
+  color: #fff;
+  font-size: 1rem;
 }
 
-.container {
+.navbar-nav .nav-link.active {
+  color: var(--gold--color);
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--gold--color);
+}
+
+.dropdown-menu {
+  background: transparent;
+}
+
+.dropdown-item:hover {
+  color: var(--gold--color);
+  background: transparent;
+}
+
+/* .container {
   max-width: 300px;
   flex-direction: column;
   gap: 50px;
+} */
+
+header {
+  font-family: "Rammetto One", sans-serif;
+  margin: 5rem 0;
 }
 
-.header {
-  margin: 0;
+header h1 {
+  font-size: 3rem;
+  color: var(--gold--color);
+}
+
+.result {
   font-family: "Rammetto One", sans-serif;
   font-size: 24px;
   font-weight: 400;
-  height: 100px;
+  height: 60px;
 }
 
 #pokemonImage {
   height: 200px;
   max-width: 100%;
+}
+.image-wraper {
+  width: 25rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .options-container {
@@ -84,8 +132,12 @@ button.wrong {
   height: 500px;
 }
 
+#options {
+  width: 40rem;
+}
+
 #points {
-  margin: 0;
+  margin-top: 30px;
   font-size: 24px;
   font-weight: 700;
   text-align: center;
@@ -100,8 +152,23 @@ button.wrong {
 
 .show {
   display: flex;
+  justify-content: center;
 }
 
 .hide {
-  display: none;
+  display: none !important;
+}
+
+.hideImage {
+  filter: brightness(0%);
+}
+
+.showImage {
+  filter: brightness(100%);
+}
+
+/* hint */
+
+.card {
+  width: 20rem;
 }
