@@ -5,6 +5,7 @@ const searchBtn = document.getElementById("searchBtn");
 const clearBtn = document.getElementById("clear");
 const searchNotFound = document.getElementById("search-not-found");
 const who = document.getElementById("who-container");
+const footerBottom = document.getElementsByClassName("footer");
 const myModal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
 
 function capitalizeFirstLetter(string) {
@@ -111,8 +112,10 @@ function handleSearch() {
 
   if (filteredPokemons.length === 0) {
     searchNotFound.style.display = "block";
+    footerBottom[0].classList.add("fixed-bottom");
   } else {
     searchNotFound.style.display = "none";
+    footerBottom[0].classList.remove("fixed-bottom");
   }
 }
 setTimeout(() => {
@@ -124,5 +127,6 @@ clearBtn.addEventListener("click", clearSearch);
 function clearSearch() {
   searchInput.value = "";
   displayPokemons(allPokemons);
-  notFoundMessage.style.display = "none";
+  searchNotFound.style.display = "none";
+  footerBottom[0].classList.remove("fixed-bottom");
 }

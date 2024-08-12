@@ -172,3 +172,30 @@ button.wrong {
 .card {
   width: 20rem;
 }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer .social-links {
+  margin-top: 40px;
+  display: flex;
+}
+
+footer .social-links a {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  line-height: 1;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+footer .social-links a:hover {
+  background: var(--gold--color);
+}

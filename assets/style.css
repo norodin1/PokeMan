@@ -21,6 +21,8 @@ body {
   color: var(--white--color);
 }
 
+/* Header */
+
 header {
   font-family: "Rammetto One", sans-serif;
   margin: 5rem 0;
@@ -86,14 +88,6 @@ header h1 {
   display: none;
 }
 
-#who img {
-  filter: brightness(0%);
-}
-
-#who a {
-  text-decoration: none;
-}
-
 .card {
   height: 32rem;
 }
@@ -106,4 +100,31 @@ header h1 {
 
 #staticBackdrop img {
   width: 20rem;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+footer .social-links {
+  margin-top: 40px;
+  display: flex;
+}
+
+footer .social-links a {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  line-height: 1;
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+footer .social-links a:hover {
+  background: var(--gold--color);
 }
