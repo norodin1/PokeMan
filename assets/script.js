@@ -62,10 +62,10 @@ function displayPokemons(pokemon) {
                       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonID}.svg"
                       alt="${detail.name}"
                     />
-                    <div class="card-body">
-                      <h5 class="pokemonName card-title">${capitalizeFirstLetter(
-                        detail.name
-                      )}</h5>
+                    <h4 class="pokemonName card-title text-center">${capitalizeFirstLetter(
+                      detail.name
+                    )}</h4>
+                    <div class="card-body content">
                       <p class="card-text"><span>Element type: </span>${
                         detail.types[0].type.name
                       }</p>

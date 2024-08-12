@@ -23,6 +23,10 @@ body {
 
 /* Header */
 
+#home {
+  margin-top: 5rem;
+}
+
 header {
   font-family: "Rammetto One", sans-serif;
   margin: 5rem 0;
@@ -59,7 +63,7 @@ header h1 {
 }
 
 .pokemonImage {
-  height: 18rem;
+  height: 10rem;
   /* width: 18rem; */
 }
 
@@ -88,8 +92,59 @@ header h1 {
   display: none;
 }
 
-.card {
-  height: 32rem;
+/* Cards */
+
+.list-item .card {
+  position: relative;
+  max-width: 300px;
+  height: 215px;
+  background-color: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+}
+.list-item .card:hover {
+  height: 430px;
+}
+
+.list-item .card .image {
+  position: relative;
+  width: 260px;
+  height: 260px;
+
+  top: -40%;
+  left: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.list-item .card .image img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.list-item .card .content {
+  position: relative;
+  top: -140px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.list-item .card:hover .content {
+  margin-top: 150px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
 }
 
 /* Modal */
